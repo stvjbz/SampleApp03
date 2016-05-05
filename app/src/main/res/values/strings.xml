@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SampleApp03</string>
+    <string name="book">book</string>
+    <string name="hit">hit</string>
 </resources>
