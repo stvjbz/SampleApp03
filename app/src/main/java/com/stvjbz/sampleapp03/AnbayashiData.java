@@ -10,7 +10,7 @@ public class AnbayashiData {
     //Constructor
     public AnbayashiData(int number, int addition, String comment) {
         this.number = number;
-        this,addition = addition;
+        this.addition = addition;
         this.comment = comment;
     }
 
