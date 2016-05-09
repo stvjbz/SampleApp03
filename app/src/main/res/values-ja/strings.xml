@@ -3,4 +3,5 @@
     <string name="app_name">サンプルアプリ０３</string>
     <string name="book">本</string>
     <string name="hit">当たり</string>
+    <string name="present">おまけ</string>
 </resources>
