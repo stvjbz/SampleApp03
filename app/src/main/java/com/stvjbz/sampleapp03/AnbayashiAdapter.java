@@ -1,5 +1,6 @@
 package com.stvjbz.sampleapp03;
 
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ public class AnbayashiAdapter extends RecyclerView.Adapter<AnbayashiViewHolder> 
     // レイアウトマネージャーにより起動される
     @Override
     public AnbayashiViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // parentはRecyckerView
+        // parentはRecyclerView
         // public View inflate (int resource, ViewGroup root, boolean attachToRoot)
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cards_layout, parent, false);
@@ -37,14 +38,16 @@ public class AnbayashiAdapter extends RecyclerView.Adapter<AnbayashiViewHolder> 
     @Override
     public void onBindViewHolder(final AnbayashiViewHolder holder, final int listPosition) {
 
-        holder.textViewNumber.setText(rouletteDataSet.get(listPosition).getNumber()+ R.string.book);
+        // R.string.bookはActivityインスタンスからしか取得できない
+        // 取得するにはgetResources().getString(R.string.book);
+        holder.textViewNumber.setText(rouletteDataSet.get(listPosition).getNumber() + "本");
         holder.textViewComment.setText(rouletteDataSet.get(listPosition).getComment());
         holder.base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // vはCardView
-                Toast.makeText(v.getContext(),R.string.present +
-                    rouletteDataSet.get(listPosition).getAddition() + R.string.book, Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "おまけ" +
+                    rouletteDataSet.get(listPosition).getAddition() + "本", Toast.LENGTH_SHORT).show();
             }
         });
 
